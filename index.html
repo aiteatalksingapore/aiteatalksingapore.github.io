@@ -14,6 +14,76 @@
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
+	<style>
+        .part {
+            flex: 1 1 30%;
+            margin: 20px;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            min-width: 45%;
+            max-width: 45%;
+			display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .part h2 {
+            text-align: center;
+        }
+
+        .talk {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .talk img {
+            border-radius: 10%;
+            height: 150px;
+            margin-bottom: 10px;
+        }
+
+
+        .talk h3 {
+            margin: 10px 0;
+        }
+
+        .talk p {
+            margin: 5px 0;
+        }
+
+        .collapsible {
+            background-color: #f4f4f4;
+            color: #333;
+            cursor: pointer;
+            padding: 1px;
+            width: 100%;
+            border: none;
+            text-align: center;
+            outline: none;
+            font-size: 16px;
+            margin-top: 1px;
+			min-width: 24%;
+            max-width: 24%;
+        }
+
+		.contentwithbutton {
+            padding: 0 18px;
+            font-size: 16px;
+            display: none;
+            overflow: hidden;
+            background-color: #f9f9f9;
+        }
+
+
+        @media (max-width: 768px) {
+            .part {
+                flex: 1 1 100%;
+                min-width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body class="is-preload">
@@ -108,31 +178,116 @@
 				</ul>
 			</section>
 
-			<section id="Schedule" class="main special">  
-					<header class="major">
-						<h2>upcoming talks</h2>
-					</header>
-					<ul style="text-align: center; max-width: 800px; margin: auto;">
-						<li>
-							<span class="image"><a href="https://natashajaques.ai/author/natasha-jaques/avatar_hu04b955ed351a495cc2c1096ede1d3b28_762133_270x270_fill_q75_lanczos_center.jpg"><img
-										src="https://natashajaques.ai/author/natasha-jaques/avatar_hu04b955ed351a495cc2c1096ede1d3b28_762133_270x270_fill_q75_lanczos_center.jpg"
-										alt="" height="200" width="200" /></a></span>
-							<h3>April 17th 2024: <strong>Reinforcement learning with human feedback </strong></h3>
-							<h3>Prof. Natasha Jaques,University of Washington and Google DeepMind</h3>
-							<p> Wed April 17th 12 noon Singapore time /Tue April 16th 9pm Pacific daylight time</p>
-							<p>	Zoom link: https://nus-sg.zoom.us/j/84608066438 </p>
-							<p>	Zoom meeting ID: 846 0806 6438 </p>
-							<p>	Open to ALL </p>
-							
-							<p style="text-align: left;">Abstract: Fine-tuning language models with reinforcement learning from human feedback (RLHF) has become the dominant paradigm for aligning large language models to human values. This talk will give a tutorial on RLHF, diving into the details of how to actually perform RL-finetuning of language models. I will cover the history of innovations leading to the form of RLHF used in ChatGPT, including my own work on KL-regularized RL fine-tuning of language models and human-centric dialog training, as well as OpenAI’s early work on learning from human preferences with deep RL. Putting it all together, we will see how what has become known as RLHF integrates these techniques. We will then briefly cover recent developments and directions for future work.</p>
-							<p style="text-align: left;">Speaker Bio: Natasha Jaques is an Assistant Professor of Computer Science and Engineering at the University of Washington, and a Senior Research Scientist at Google DeepMind. Her research focuses on Social Reinforcement Learning in multi-agent and human-AI interactions. During her PhD at MIT, she developed techniques for learning from human feedback signals to train language models which were later built on by OpenAI’s series of work on Reinforcement Learning from Human Feedback (RLHF). In the multi-agent space, she has developed techniques for improving coordination through the optimization of social influence, and adversarial environment generation for improving the robustness of RL agents.  Her work has received various awards, including Best Demo at NeurIPS, an honourable mention for Best Paper at ICML, and the Outstanding PhD Dissertation Award from the Association for the Advancement of Affective Computing. Her work has been featured in Science Magazine, MIT Technology Review, Quartz, IEEE Spectrum, Boston Magazine, and on CBC radio. Natasha earned her Masters degree from the University of British Columbia, and undergraduate degrees in Computer Science and Psychology from the University of Regina.</p>
-								
-							
-					</ul>
-		
-					
-
+			<section id="Schedule" class="main special">
+				<!-- <header class="major">
+					<h2>Upcoming Talks</h2>
+				</header>
+				<div class="container">
+					<div class="part">
+						<p>April 17th 2024: 12PM SGT (9PM PT)</p>
+						<div class="talk">
+								<img src="https://natashajaques.ai/author/natasha-jaques/avatar_hu04b955ed351a495cc2c1096ede1d3b28_762133_270x270_fill_q75_lanczos_center.jpg"
+									alt="Prof. Natasha Jaques">
+							</a>
+							<p><strong></strong>Prof. Natasha Jaques</strong> </p>
+							<p style="margin-top: -15px;">University of Washington and Google DeepMind</p>
+							<h3><strong>Reinforcement Learning with Human Feedback</strong></h3>
+							<p>Zoom <a href="https://nus-sg.zoom.us/j/84608066438">link</a> - ID: 846 0806 6438</p> -->
+							<!-- <p>Open to ALL</p> -->
+							<!-- <button class="collapsible">Speaker Bio</button>
+							<button class="collapsible">Abstract</button>
+							<button class="collapsible">Meeting Info</button>
+							<div class="contentwithbutton">
+								<p>Fine-tuning language models with reinforcement learning from human feedback (RLHF) has become the dominant paradigm for aligning large language models to human values. This talk will give a tutorial on RLHF, diving into the details of how to actually perform RL-finetuning of language models. I will cover the history of innovations leading to the form of RLHF used in ChatGPT, including my own work on KL-regularized RL fine-tuning of language models and human-centric dialog training, as well as OpenAI’s early work on learning from human preferences with deep RL. Putting it all together, we will see how what has become known as RLHF integrates these techniques. We will then briefly cover recent developments and directions for future work.</p>
+							</div>
+							<div class="content">
+								<p>Natasha Jaques is an Assistant Professor of Computer Science and Engineering at the University of Washington, and a Senior Research Scientist at Google DeepMind. Her research focuses on Social Reinforcement Learning in multi-agent and human-AI interactions. During her PhD at MIT, she developed techniques for learning from human feedback signals to train language models which were later built on by OpenAI’s series of work on Reinforcement Learning from Human Feedback (RLHF). In the multi-agent space, she has developed techniques for improving coordination through the optimization of social influence, and adversarial environment generation for improving the robustness of RL agents. Her work has received various awards, including Best Demo at NeurIPS, an honourable mention for Best Paper at ICML, and the Outstanding PhD Dissertation Award from the Association for the Advancement of Affective Computing. Her work has been featured in Science Magazine, MIT Technology Review, Quartz, IEEE Spectrum, Boston Magazine, and on CBC radio. Natasha earned her Masters degree from the University of British Columbia, and undergraduate degrees in Computer Science and Psychology from the University of Regina.</p>
+							</div> -->
+							<!-- <button class="collapsible" onclick="showContent('bio-content-1')">Speaker Bio</button>
+							<button class="collapsible" onclick="showContent('abstract-content-1')">Abstract</button>
+							<button class="collapsible" onclick="showContent('meeting-info-content-1')">Meeting Info</button>
+							<div class="contentwithbutton" id="bio-content-1">
+								<p>Natasha Jaques is an Assistant Professor of Computer Science and Engineering at the University of Washington, and a Senior Research Scientist at Google DeepMind. Her research focuses on Social Reinforcement Learning in multi-agent and human-AI interactions. During her PhD at MIT, she developed techniques for learning from human feedback signals to train language models which were later built on by OpenAI’s series of work on Reinforcement Learning from Human Feedback (RLHF). In the multi-agent space, she has developed techniques for improving coordination through the optimization of social influence, and adversarial environment generation for improving the robustness of RL agents. Her work has received various awards, including Best Demo at NeurIPS, an honourable mention for Best Paper at ICML, and the Outstanding PhD Dissertation Award from the Association for the Advancement of Affective Computing. Her work has been featured in Science Magazine, MIT Technology Review, Quartz, IEEE Spectrum, Boston Magazine, and on CBC radio. Natasha earned her Masters degree from the University of British Columbia, and undergraduate degrees in Computer Science and Psychology from the University of Regina.</p>
+							</div>
+							<div class="contentwithbutton" id="abstract-content-1">
+								<p>Fine-tuning language models with reinforcement learning from human feedback (RLHF) has become the dominant paradigm for aligning large language models to human values. This talk will give a tutorial on RLHF, diving into the details of how to actually perform RL-finetuning of language models. I will cover the history of innovations leading to the form of RLHF used in ChatGPT, including my own work on KL-regularized RL fine-tuning of language models and human-centric dialog training, as well as OpenAI’s early work on learning from human preferences with deep RL. Putting it all together, we will see how what has become known as RLHF integrates these techniques. We will then briefly cover recent developments and directions for future work.</p>
+							</div>
+							<div class="contentwithbutton" id="meeting-info-content-1">
+								<p>Zoom link: <a href="https://nus-sg.zoom.us/j/123456789">https://nus-sg.zoom.us/j/123456789</a></p>
+								<p>Zoom meeting ID: 846 0806 6438</p>
+                        		<p>Open to ALL</p>
+							</div>
+								</div>
+							</div>
+				</div> -->       
+ 				<header class="major">
+					<h2>Previous Talks</h2>
+				</header>
+				<div class="container">
+					<div class="part">
+						<p>April 17th 2024: 12PM SGT (9PM PT)</p>
+						<div class="talk">
+								<img src="https://natashajaques.ai/author/natasha-jaques/avatar_hu04b955ed351a495cc2c1096ede1d3b28_762133_270x270_fill_q75_lanczos_center.jpg"
+									alt="Prof. Natasha Jaques">
+								<img src="images/thumb/s1thumb.jpg"
+								alt="Prof. Natasha Jaques">
+							<p><strong></strong>Prof. Natasha Jaques</strong> </p>
+							<p style="margin-top: -15px;">University of Washington and Google DeepMind</p>
+							<h3><strong>Reinforcement Learning with Human Feedback</strong></h3>
+							<!-- <p>Zoom <a href="https://nus-sg.zoom.us/j/84608066438">link</a> - ID: 846 0806 6438</p> -->
+							<!-- <p>Open to ALL</p> -->
+							<!-- <button class="collapsible">Speaker Bio</button>
+							<button class="collapsible">Abstract</button>
+							<button class="collapsible">Meeting Info</button>
+							<div class="contentwithbutton">
+								<p>Fine-tuning language models with reinforcement learning from human feedback (RLHF) has become the dominant paradigm for aligning large language models to human values. This talk will give a tutorial on RLHF, diving into the details of how to actually perform RL-finetuning of language models. I will cover the history of innovations leading to the form of RLHF used in ChatGPT, including my own work on KL-regularized RL fine-tuning of language models and human-centric dialog training, as well as OpenAI’s early work on learning from human preferences with deep RL. Putting it all together, we will see how what has become known as RLHF integrates these techniques. We will then briefly cover recent developments and directions for future work.</p>
+							</div>
+							<div class="content">
+								<p>Natasha Jaques is an Assistant Professor of Computer Science and Engineering at the University of Washington, and a Senior Research Scientist at Google DeepMind. Her research focuses on Social Reinforcement Learning in multi-agent and human-AI interactions. During her PhD at MIT, she developed techniques for learning from human feedback signals to train language models which were later built on by OpenAI’s series of work on Reinforcement Learning from Human Feedback (RLHF). In the multi-agent space, she has developed techniques for improving coordination through the optimization of social influence, and adversarial environment generation for improving the robustness of RL agents. Her work has received various awards, including Best Demo at NeurIPS, an honourable mention for Best Paper at ICML, and the Outstanding PhD Dissertation Award from the Association for the Advancement of Affective Computing. Her work has been featured in Science Magazine, MIT Technology Review, Quartz, IEEE Spectrum, Boston Magazine, and on CBC radio. Natasha earned her Masters degree from the University of British Columbia, and undergraduate degrees in Computer Science and Psychology from the University of Regina.</p>
+							</div> -->
+							<button class="collapsible" onclick="showContent('bio-content-1')">Speaker Bio</button>
+							<button class="collapsible" onclick="showContent('abstract-content-1')">Abstract</button>
+							<button class="collapsible" onclick="showContent('meeting-info-content-1')">Meeting Info</button>
+							<button class="collapsible" onclick="showContent('record-info-content-1')">Record Info</button>
+							<div class="contentwithbutton" id="bio-content-1">
+								<p>Natasha Jaques is an Assistant Professor of Computer Science and Engineering at the University of Washington, and a Senior Research Scientist at Google DeepMind. Her research focuses on Social Reinforcement Learning in multi-agent and human-AI interactions. During her PhD at MIT, she developed techniques for learning from human feedback signals to train language models which were later built on by OpenAI’s series of work on Reinforcement Learning from Human Feedback (RLHF). In the multi-agent space, she has developed techniques for improving coordination through the optimization of social influence, and adversarial environment generation for improving the robustness of RL agents. Her work has received various awards, including Best Demo at NeurIPS, an honourable mention for Best Paper at ICML, and the Outstanding PhD Dissertation Award from the Association for the Advancement of Affective Computing. Her work has been featured in Science Magazine, MIT Technology Review, Quartz, IEEE Spectrum, Boston Magazine, and on CBC radio. Natasha earned her Masters degree from the University of British Columbia, and undergraduate degrees in Computer Science and Psychology from the University of Regina.</p>
+							</div>
+							<div class="contentwithbutton" id="abstract-content-1">
+								<p>Fine-tuning language models with reinforcement learning from human feedback (RLHF) has become the dominant paradigm for aligning large language models to human values. This talk will give a tutorial on RLHF, diving into the details of how to actually perform RL-finetuning of language models. I will cover the history of innovations leading to the form of RLHF used in ChatGPT, including my own work on KL-regularized RL fine-tuning of language models and human-centric dialog training, as well as OpenAI’s early work on learning from human preferences with deep RL. Putting it all together, we will see how what has become known as RLHF integrates these techniques. We will then briefly cover recent developments and directions for future work.</p>
+							</div>
+							<div class="contentwithbutton" id="meeting-info-content-1">
+								<p>Zoom link: <a href="https://nus-sg.zoom.us/j/123456789">https://nus-sg.zoom.us/j/123456789</a></p>
+								<p>Zoom meeting ID: 846 0806 6438</p>
+                        		<p>Open to ALL</p>
+							</div>
+							<div class="contentwithbutton" id="record-info-content-1">
+								<p>Youtube: <a href="https://www.youtube.com/watch?v=VOgrYxFe-r0">https://www.youtube.com/watch?v=VOgrYxFe-r0</a></p>
+							</div>
+								</div>
+							</div>
+				</div>
 			</section>
+			<script>
+				function showContent(contentId) {
+				var contents = document.querySelectorAll('.contentwithbutton');
+				var buttons = document.querySelectorAll('.collapsible');
+				contents.forEach(content => {
+					if (content.id === contentId) {
+						content.style.display = content.style.display === 'block' ? 'none' : 'block';
+					} else {
+						content.style.display = 'none';
+					}
+				});
+				buttons.forEach(button => {
+					if (button.getAttribute('onclick').includes(contentId)) {
+						button.classList.toggle('active');
+					} else {
+						button.classList.remove('active');
+					}
+				});
+			}
+
+			</script>
 		
 			<script>
 				document.addEventListener('DOMContentLoaded', function() {
