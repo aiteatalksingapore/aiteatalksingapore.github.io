@@ -22,11 +22,15 @@
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
-            min-width: 45%;
-            max-width: 45%;
+            min-width: 40%;
+            max-width: 40%;
 			display: flex;
             flex-direction: column;
             align-items: center;
+			.part {
+			flex: 1 1 45%; /* Adjust the width of each part */
+			border: 1px solid #ccc; /* Optional: Adds a border for visual separation */
+			box-sizing: border-box;
         }
 
         .part h2 {
@@ -179,75 +183,82 @@
 			</section>
 
 			<section id="Schedule" class="main special">
-				<!-- <header class="major">
+				<header class="major">
 					<h2>Upcoming Talks</h2>
 				</header>
 				<div class="container">
 					<div class="part">
-						<p>April 17th 2024: 12PM SGT (9PM PT)</p>
+						<p>July 4th 2024: 10AM SGT</p>
 						<div class="talk">
-								<img src="https://natashajaques.ai/author/natasha-jaques/avatar_hu04b955ed351a495cc2c1096ede1d3b28_762133_270x270_fill_q75_lanczos_center.jpg"
+								<img src="images/yilun3.png"
 									alt="Prof. Natasha Jaques">
 							</a>
-							<p><strong></strong>Prof. Natasha Jaques</strong> </p>
-							<p style="margin-top: -15px;">University of Washington and Google DeepMind</p>
-							<h3><strong>Reinforcement Learning with Human Feedback</strong></h3>
-							<p>Zoom <a href="https://nus-sg.zoom.us/j/84608066438">link</a> - ID: 846 0806 6438</p> -->
-							<!-- <p>Open to ALL</p> -->
-							<!-- <button class="collapsible">Speaker Bio</button>
-							<button class="collapsible">Abstract</button>
-							<button class="collapsible">Meeting Info</button>
-							<div class="contentwithbutton">
-								<p>Fine-tuning language models with reinforcement learning from human feedback (RLHF) has become the dominant paradigm for aligning large language models to human values. This talk will give a tutorial on RLHF, diving into the details of how to actually perform RL-finetuning of language models. I will cover the history of innovations leading to the form of RLHF used in ChatGPT, including my own work on KL-regularized RL fine-tuning of language models and human-centric dialog training, as well as OpenAI’s early work on learning from human preferences with deep RL. Putting it all together, we will see how what has become known as RLHF integrates these techniques. We will then briefly cover recent developments and directions for future work.</p>
+							<p><strong></strong>Yilun Du</strong> </p>
+							<p style="margin-top: -15px;">PhD in EECS @ MIT</p>
+							<p style="margin-top: -15px;">Incoming assistant professor at Harvard University</p>
+							<h3><strong>Generalizing Outside the Training Distribution through Compositional Generation</strong></h3>
+							<button class="collapsible" onclick="showContent('bio-content-2')">Speaker Bio</button>
+							<button class="collapsible" onclick="showContent('abstract-content-2')">Abstract</button>
+							<button class="collapsible" onclick="showContent('meeting-info-content-2')">Meeting Info</button>
+							<div class="contentwithbutton" id="bio-content-2">
+								<p>Yilun Du is an incoming Assistant Professor at Harvard, starting in Fall 2025 at the Kempner Institute and Computer Science department. He is a final year PhD student in EECS at MIT, advised by Prof. Leslie Kaelbling, Prof. Tomas Lozano-Perez, and Prof. Joshua B. Tenenbaum. Yilun's research focuses on generative models, decision making, robot learning, and embodied agents. His work addresses the challenges of limited decision-making data and generalization to unseen situations using energy landscapes for composable generative models. Yilun aims to develop a decentralized generative architecture for decision-making and enhance models with reinforcement learning, with applications in fields like computational biology.</p>
 							</div>
-							<div class="content">
-								<p>Natasha Jaques is an Assistant Professor of Computer Science and Engineering at the University of Washington, and a Senior Research Scientist at Google DeepMind. Her research focuses on Social Reinforcement Learning in multi-agent and human-AI interactions. During her PhD at MIT, she developed techniques for learning from human feedback signals to train language models which were later built on by OpenAI’s series of work on Reinforcement Learning from Human Feedback (RLHF). In the multi-agent space, she has developed techniques for improving coordination through the optimization of social influence, and adversarial environment generation for improving the robustness of RL agents. Her work has received various awards, including Best Demo at NeurIPS, an honourable mention for Best Paper at ICML, and the Outstanding PhD Dissertation Award from the Association for the Advancement of Affective Computing. Her work has been featured in Science Magazine, MIT Technology Review, Quartz, IEEE Spectrum, Boston Magazine, and on CBC radio. Natasha earned her Masters degree from the University of British Columbia, and undergraduate degrees in Computer Science and Psychology from the University of Regina.</p>
-							</div> -->
-							<!-- <button class="collapsible" onclick="showContent('bio-content-1')">Speaker Bio</button>
-							<button class="collapsible" onclick="showContent('abstract-content-1')">Abstract</button>
-							<button class="collapsible" onclick="showContent('meeting-info-content-1')">Meeting Info</button>
-							<div class="contentwithbutton" id="bio-content-1">
-								<p>Natasha Jaques is an Assistant Professor of Computer Science and Engineering at the University of Washington, and a Senior Research Scientist at Google DeepMind. Her research focuses on Social Reinforcement Learning in multi-agent and human-AI interactions. During her PhD at MIT, she developed techniques for learning from human feedback signals to train language models which were later built on by OpenAI’s series of work on Reinforcement Learning from Human Feedback (RLHF). In the multi-agent space, she has developed techniques for improving coordination through the optimization of social influence, and adversarial environment generation for improving the robustness of RL agents. Her work has received various awards, including Best Demo at NeurIPS, an honourable mention for Best Paper at ICML, and the Outstanding PhD Dissertation Award from the Association for the Advancement of Affective Computing. Her work has been featured in Science Magazine, MIT Technology Review, Quartz, IEEE Spectrum, Boston Magazine, and on CBC radio. Natasha earned her Masters degree from the University of British Columbia, and undergraduate degrees in Computer Science and Psychology from the University of Regina.</p>
+							<div class="contentwithbutton" id="abstract-content-2">
+								<p>Generative AI has led to stunning successes in recent years but is fundamentally limited by the amount of data available. This is especially limiting in the embodied setting – where an agent must solve new tasks in new environments. In this talk, I'll introduce the idea of compositional generative modeling, which enables generalization beyond the training data by building complex generative models from smaller constituents. I'll first introduce the idea of energy-based models and illustrate how they enable compositional generative modeling. I'll then illustrate how such compositional models enable us to synthesize complex plans for unseen tasks at inference time. Finally, I'll show how such compositionality can be applied to multiple foundation models trained on various forms of Internet data, enabling us to construct decision-making systems that can hierarchically zero-shot manner.</p>
 							</div>
-							<div class="contentwithbutton" id="abstract-content-1">
-								<p>Fine-tuning language models with reinforcement learning from human feedback (RLHF) has become the dominant paradigm for aligning large language models to human values. This talk will give a tutorial on RLHF, diving into the details of how to actually perform RL-finetuning of language models. I will cover the history of innovations leading to the form of RLHF used in ChatGPT, including my own work on KL-regularized RL fine-tuning of language models and human-centric dialog training, as well as OpenAI’s early work on learning from human preferences with deep RL. Putting it all together, we will see how what has become known as RLHF integrates these techniques. We will then briefly cover recent developments and directions for future work.</p>
-							</div>
-							<div class="contentwithbutton" id="meeting-info-content-1">
-								<p>Zoom link: <a href="https://nus-sg.zoom.us/j/123456789">https://nus-sg.zoom.us/j/123456789</a></p>
-								<p>Zoom meeting ID: 846 0806 6438</p>
+							<div class="contentwithbutton" id="meeting-info-content-2">
+								<p>Zoom link: <a href="https://nus-sg.zoom.us/j/81069690971">https://nus-sg.zoom.us/j/81069690971</a></p>
                         		<p>Open to ALL</p>
 							</div>
 								</div>
 							</div>
-				</div> -->       
+				</div>      
  				<header class="major">
 					<h2>Previous Talks</h2>
 				</header>
+				
 				<div class="container">
+					<div class="part">
+						<p>June 26th 2024: 10AM SGT</p>
+						<div class="talk">
+								<img src="images/BaifengShi.jpg"
+									alt="Prof. Natasha Jaques">
+							</a>
+							<p><strong></strong>Baifeng Shi</strong> </p>
+							<p style="margin-top: -15px;">University of California, Berkeley</p>
+							<h3><strong>Scaling Up Visual Pre-Training: What's Next?</strong></h3>
+							<button class="collapsible" onclick="showContent('bio-content-2')">Speaker Bio</button>
+							<button class="collapsible" onclick="showContent('abstract-content-2')">Abstract</button>
+							<button class="collapsible" onclick="showContent('record-info-content-2')">Record Info</button>
+							<div class="contentwithbutton" id="bio-content-2">
+								<p>Baifeng Shi is a Ph.D. student advised by Prof. Trevor Darrell at UC Berkeley. He previously graduated from Peking University with a B.S. degree in computer science. Baifeng's research focuses on building generalist vision and robotic models.</p>
+							</div>
+							<div class="contentwithbutton" id="abstract-content-2">
+								<p>Larger models, more data, and longer training are the three-pronged approaches to scaling up visual pre-training. In this talk, I will first share our recent work that challenges the necessity of larger models. We find that pre-trained and frozen smaller models run on larger image scales (e.g., 224->448->672) are generally better than larger models (e.g., Base->Large->Giant). This trend holds across a variety of vision tasks—including image classification, semantic segmentation, and depth estimation—as well as Multimodal LLM benchmarks and robotic tasks. We demonstrate that smaller models, when pre-trained on multiple image scales, have similar model capacities as larger models and can perform on par or even better. Next, I will share some thoughts on the future of scaling visual pre-training, specifically, whether we should shift our focus from larger models to larger images, and how to utilize bottom-up and top-down attention to scale to extremely large images without hitting the computational constraints.</p>
+							</div>
+							<!-- <div class="contentwithbutton" id="meeting-info-content-2">
+								<p>Zoom link: <a href="https://nus-sg.zoom.us/j/86707998713">https://nus-sg.zoom.us/j/86707998713</a></p>
+                        		<p>Open to ALL</p>https://youtu.be/oULYfb0sc30
+							</div> -->
+							<div class="contentwithbutton" id="record-info-content-2">
+								<p>Youtube: <a href="https://www.youtube.com/watch?v=VOgrYxFe-r0">https://youtu.be/oULYfb0sc30</a></p>
+							</div>
+						</div>
+								
+							</div>
 					<div class="part">
 						<p>April 17th 2024: 12PM SGT (9PM PT)</p>
 						<div class="talk">
 								<img src="https://natashajaques.ai/author/natasha-jaques/avatar_hu04b955ed351a495cc2c1096ede1d3b28_762133_270x270_fill_q75_lanczos_center.jpg"
 									alt="Prof. Natasha Jaques">
-								<img src="images/thumb/s1thumb.jpg"
-								alt="Prof. Natasha Jaques">
+								<!-- <img src="images/thumb/s1thumb.jpg"
+								alt="Prof. Natasha Jaques"> -->
 							<p><strong></strong>Prof. Natasha Jaques</strong> </p>
 							<p style="margin-top: -15px;">University of Washington and Google DeepMind</p>
 							<h3><strong>Reinforcement Learning with Human Feedback</strong></h3>
-							<!-- <p>Zoom <a href="https://nus-sg.zoom.us/j/84608066438">link</a> - ID: 846 0806 6438</p> -->
-							<!-- <p>Open to ALL</p> -->
-							<!-- <button class="collapsible">Speaker Bio</button>
-							<button class="collapsible">Abstract</button>
-							<button class="collapsible">Meeting Info</button>
-							<div class="contentwithbutton">
-								<p>Fine-tuning language models with reinforcement learning from human feedback (RLHF) has become the dominant paradigm for aligning large language models to human values. This talk will give a tutorial on RLHF, diving into the details of how to actually perform RL-finetuning of language models. I will cover the history of innovations leading to the form of RLHF used in ChatGPT, including my own work on KL-regularized RL fine-tuning of language models and human-centric dialog training, as well as OpenAI’s early work on learning from human preferences with deep RL. Putting it all together, we will see how what has become known as RLHF integrates these techniques. We will then briefly cover recent developments and directions for future work.</p>
-							</div>
-							<div class="content">
-								<p>Natasha Jaques is an Assistant Professor of Computer Science and Engineering at the University of Washington, and a Senior Research Scientist at Google DeepMind. Her research focuses on Social Reinforcement Learning in multi-agent and human-AI interactions. During her PhD at MIT, she developed techniques for learning from human feedback signals to train language models which were later built on by OpenAI’s series of work on Reinforcement Learning from Human Feedback (RLHF). In the multi-agent space, she has developed techniques for improving coordination through the optimization of social influence, and adversarial environment generation for improving the robustness of RL agents. Her work has received various awards, including Best Demo at NeurIPS, an honourable mention for Best Paper at ICML, and the Outstanding PhD Dissertation Award from the Association for the Advancement of Affective Computing. Her work has been featured in Science Magazine, MIT Technology Review, Quartz, IEEE Spectrum, Boston Magazine, and on CBC radio. Natasha earned her Masters degree from the University of British Columbia, and undergraduate degrees in Computer Science and Psychology from the University of Regina.</p>
-							</div> -->
 							<button class="collapsible" onclick="showContent('bio-content-1')">Speaker Bio</button>
 							<button class="collapsible" onclick="showContent('abstract-content-1')">Abstract</button>
-							<button class="collapsible" onclick="showContent('meeting-info-content-1')">Meeting Info</button>
+							<!-- <button class="collapsible" onclick="showContent('meeting-info-content-1')">Meeting Info</button> -->
 							<button class="collapsible" onclick="showContent('record-info-content-1')">Record Info</button>
 							<div class="contentwithbutton" id="bio-content-1">
 								<p>Natasha Jaques is an Assistant Professor of Computer Science and Engineering at the University of Washington, and a Senior Research Scientist at Google DeepMind. Her research focuses on Social Reinforcement Learning in multi-agent and human-AI interactions. During her PhD at MIT, she developed techniques for learning from human feedback signals to train language models which were later built on by OpenAI’s series of work on Reinforcement Learning from Human Feedback (RLHF). In the multi-agent space, she has developed techniques for improving coordination through the optimization of social influence, and adversarial environment generation for improving the robustness of RL agents. Her work has received various awards, including Best Demo at NeurIPS, an honourable mention for Best Paper at ICML, and the Outstanding PhD Dissertation Award from the Association for the Advancement of Affective Computing. Her work has been featured in Science Magazine, MIT Technology Review, Quartz, IEEE Spectrum, Boston Magazine, and on CBC radio. Natasha earned her Masters degree from the University of British Columbia, and undergraduate degrees in Computer Science and Psychology from the University of Regina.</p>
@@ -255,11 +266,11 @@
 							<div class="contentwithbutton" id="abstract-content-1">
 								<p>Fine-tuning language models with reinforcement learning from human feedback (RLHF) has become the dominant paradigm for aligning large language models to human values. This talk will give a tutorial on RLHF, diving into the details of how to actually perform RL-finetuning of language models. I will cover the history of innovations leading to the form of RLHF used in ChatGPT, including my own work on KL-regularized RL fine-tuning of language models and human-centric dialog training, as well as OpenAI’s early work on learning from human preferences with deep RL. Putting it all together, we will see how what has become known as RLHF integrates these techniques. We will then briefly cover recent developments and directions for future work.</p>
 							</div>
-							<div class="contentwithbutton" id="meeting-info-content-1">
+							<!-- <div class="contentwithbutton" id="meeting-info-content-1">
 								<p>Zoom link: <a href="https://nus-sg.zoom.us/j/123456789">https://nus-sg.zoom.us/j/123456789</a></p>
 								<p>Zoom meeting ID: 846 0806 6438</p>
                         		<p>Open to ALL</p>
-							</div>
+							</div> -->
 							<div class="contentwithbutton" id="record-info-content-1">
 								<p>Youtube: <a href="https://www.youtube.com/watch?v=VOgrYxFe-r0">https://www.youtube.com/watch?v=VOgrYxFe-r0</a></p>
 							</div>
@@ -343,7 +354,6 @@
 			</script>
 
 
-			<!-- First Section -->
 			<section id="Previous talks" class="main special">
 				<header class="major">
 					<h2>Invited Spearkers</h2>
