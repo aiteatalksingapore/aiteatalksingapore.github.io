@@ -2,31 +2,44 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+// Include PHPMailer
 require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
-$mail = new PHPMailer(true);
-try {
-    // 配置 SMTP
-    $mail->isSMTP();
-    $mail->Host       = 'smtp.gmail.com'; 
-    $mail->SMTPAuth   = true;
-    $mail->Username   = 'ranxuming@gmail.com'; // 你的 Gmail
-    $mail->Password   = '123rxmRXM'; // 你的应用专用密码
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port       = 587;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 
-    // 发送邮件
-    $mail->setFrom('your-email@gmail.com', 'Your Name');
-    $mail->addAddress('recipient@example.com'); 
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $mail = new PHPMailer(true);
 
-    $mail->Subject = 'Test Email';
-    $mail->Body    = 'This is a test email sent via SMTP.';
+        try {
+            // SMTP configuration
+            $mail->isSMTP();
+            $mail->Host       = 'smtp.gmail.com'; // Gmail SMTP server
+            $mail->SMTPAuth   = true;
+            $mail->Username   = 'ranxuming@gmail.com'; // Your Gmail address
+            $mail->Password   = 'zqcgdgllzviwvzrg'; // Your Gmail app-specific password
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port       = 587;
 
-    $mail->send();
-    echo "Email sent successfully.";
-} catch (Exception $e) {
-    echo "Email failed: {$mail->ErrorInfo}";
+            // Email settings
+            $mail->setFrom('ranxuming@gmail.com', 'AI-TeaTalkSG Subscription');
+            $mail->addAddress('ai-teatalksg+subscribe@googlegroups.com'); // Google Group subscription address
+
+            // Email content
+            $mail->Subject = 'Subscribe';
+            $mail->Body    = "Please subscribe me to AI-TeaTalkSG Google Group. My email: $email";
+
+            $mail->send();
+            echo "Subscription request sent! Please check your email to confirm.";
+        } catch (Exception $e) {
+            echo "Failed to send subscription request. Error: {$mail->ErrorInfo}";
+        }
+    } else {
+        echo "Invalid email address.";
+    }
+} else {
+    echo "Invalid request method.";
 }
 ?>
