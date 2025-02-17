@@ -835,32 +835,5 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Subscribe to AI-TeaTalkSG</title>
-	</head>
-
-	
-		<h2>Subscribe to AI-TeaTalkSG Google Group</h2>
-		<p>Enter your email to subscribe:</p>
-	
-		<input type="email" id="emailInput" placeholder="Enter your email" required>
-		<button onclick="subscribeToGroup()">Subscribe</button>
-	
-		<script>
-			function subscribeToGroup() {
-				var email = document.getElementById("emailInput").value.trim();
-				if (email === "") {
-					alert("Please enter a valid email address.");
-					return;
-				}
-	
-				var mailtoLink = "mailto:ai-teatalksg+subscribe@googlegroups.com?subject=Subscribe&body=Please add me to the AI-TeaTalkSG group. My email: " + encodeURIComponent(email);
-				
-				window.location.href = mailtoLink;
-			}
-		</script>
-</body>
 
 </html>
