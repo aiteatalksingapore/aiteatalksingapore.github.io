@@ -1,25 +1,32 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $to = 'ai-teatalksg@googlegroups.com';
-        $subject = 'Subscribe';
-        $message = 'Please subscribe me to the Google Group.';
-        $headers = 'From: ' . $email . "\r\n" .
-                   'Reply-To: ' . $email . "\r\n" .
-                   'X-Mailer: PHP/' . phpversion();
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
 
-        if (mail($to, $subject, $message, $headers)) {
-            echo "Subscription request sent successfully.";
-        } else {
-            echo "Failed to send subscription request.";
-            error_log("Mail function failed. Check server email configuration.");
-        }
-    } else {
-        echo "Invalid email address.";
-    }
-} else {
-    echo "Invalid request method.";
+$mail = new PHPMailer(true);
+try {
+    // 配置 SMTP
+    $mail->isSMTP();
+    $mail->Host       = 'smtp.gmail.com'; 
+    $mail->SMTPAuth   = true;
+    $mail->Username   = 'ranxuming@gmail.com'; // 你的 Gmail
+    $mail->Password   = '123rxmRXM'; // 你的应用专用密码
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port       = 587;
+
+    // 发送邮件
+    $mail->setFrom('your-email@gmail.com', 'Your Name');
+    $mail->addAddress('recipient@example.com'); 
+
+    $mail->Subject = 'Test Email';
+    $mail->Body    = 'This is a test email sent via SMTP.';
+
+    $mail->send();
+    echo "Email sent successfully.";
+} catch (Exception $e) {
+    echo "Email failed: {$mail->ErrorInfo}";
 }
-?> 
+?>
