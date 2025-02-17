@@ -3,7 +3,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $to = 'ai-teatalksg+subscribe@googlegroups.com';
+        $to = 'ai-teatalksg@googlegroups.com';
         $subject = 'Subscribe';
         $message = 'Please subscribe me to the Google Group.';
         $headers = 'From: ' . $email . "\r\n" .
